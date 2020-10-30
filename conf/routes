@@ -7,6 +7,8 @@
 GET     /                           controllers.HomeController.index
 
 GET     /connect4                   controllers.Connect4Controller.connect4
+
+# GET     /connect4                  controllers.Connect4Controller.place   # somehow putting : after the / will allow me to pass an argument to the place variable, but I dunno how.
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code

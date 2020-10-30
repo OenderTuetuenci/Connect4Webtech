@@ -13,5 +13,8 @@ class Connect4Controller @Inject() (cc:ControllerComponents) extends AbstractCon
   def connect4 = Action{
     Ok(connect4Test)
   }
+  /*def place(row: Int) = Action{
+    Ok(gameController.move(row))
+  }*/
 
 }
