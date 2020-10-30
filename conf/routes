@@ -4,9 +4,9 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
-
+GET     /                           controllers.Connect4Controller.about
 GET     /connect4                   controllers.Connect4Controller.connect4
+GET     /connect4/:column           controllers.Connect4Controller.put(column:Int)
 
 # GET     /connect4                  controllers.Connect4Controller.place   # somehow putting : after the / will allow me to pass an argument to the place variable, but I dunno how.
 # An example controller showing how to use dependency injection

@@ -1,20 +1,25 @@
 package controllers
 
 import Connect4._
+import controller.controllerComponent.ControllerInterface
 import javax.inject.Inject
-import play.api.mvc.{AbstractController, ControllerComponents}
+import play.api.mvc.{AbstractController, Action, AnyContent, ControllerComponents}
 
 
 class Connect4Controller @Inject() (cc:ControllerComponents) extends AbstractController(cc){
-  val gameController = Connect4.controller
+  val gameController:ControllerInterface = Connect4.controller
 
-  def connect4Test = gameController.grid.toString
+  def gridText: String = gameController.grid.toString
 
-  def connect4 = Action{
-    Ok(connect4Test)
+  def connect4: Action[AnyContent] = Action{
+    Ok(gridText)
   }
-  /*def place(row: Int) = Action{
-    Ok(gameController.move(row))
-  }*/
+  def put(column: Int): Action[AnyContent] = Action{
+    gameController.move(column)
+    Ok(gridText)
+  }
+  def about(): Action[AnyContent] = Action {
+    Ok(views.html.index())
+  }
 
 }
