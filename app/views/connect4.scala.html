@@ -4,7 +4,16 @@
 @(grid:GridInterface,player:String)
 
 @main("Welcome to Connect4!") {
+
     <div class="grid">
+        <p>
+            <a href="http://localhost:9000/connect4/0"> 0 </a>
+            <a href="http://localhost:9000/connect4/1"> 1 </a>
+            <a href="http://localhost:9000/connect4/2"> 2 </a>
+            <a href="http://localhost:9000/connect4/3"> 3 </a>
+            <a href="http://localhost:9000/connect4/4"> 4 </a>
+            <a href="http://localhost:9000/connect4/5"> 5 </a>
+        </p>
         <p>@grid.grid(0)</p>
         <p>@grid.grid(1)</p>
         <p>@grid.grid(2)</p>
@@ -18,5 +27,7 @@
     <div class="info">
         <p>Use URL to play the Game!!</p>
         <p>Example: localhost:9000/connect4/0</p>
+        <p>Or use the following Links to place the stonewith the links above the columns.</p>
+
     </div>
 }
