@@ -19,4 +19,8 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.index())
   }
 
+  def test: Action[AnyContent] = Action {
+    Ok(views.html.test())
+  }
+
 }

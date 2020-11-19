@@ -3,21 +3,27 @@
 
 @main("Welcome to Connect4!") {
     <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/connect4.css")' />
-    <body>
-        <div class="grid">
+    <div class="container">
+        <div class="row">
+        </div>
+        <div class="row">
             <table cellspacing="20">
                 <tr>
                     <td></td>
                     <td>
                         <table cellpadding="5">
                             <tr id="columnlinks">
-                                <td> <a href="http://localhost:9000/connect4/0"> 0 </a> </td>
-                                <td> <a href="http://localhost:9000/connect4/1"> 1 </a></td>
-                                <td> <a href="http://localhost:9000/connect4/2"> 2 </a></td>
-                                <td> <a href="http://localhost:9000/connect4/3"> 3 </a></td>
-                                <td> <a href="http://localhost:9000/connect4/4"> 4 </a></td>
-                                <td> <a href="http://localhost:9000/connect4/5"> 5 </a></td>
-                            </tr>
+                                <div class="btn-toolbar">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn"> <a href="http://localhost:9000/connect4/0"> 0 </a></button>
+                                        <button type="button" class="btn"> <a href="http://localhost:9000/connect4/1"> 1 </a></button>
+                                        <button type="button" class="btn"> <a href="http://localhost:9000/connect4/2"> 2 </a></button>
+                                        <button type="button" class="btn"> <a href="http://localhost:9000/connect4/3"> 3 </a></button>
+                                        <button type="button" class="btn"> <a href="http://localhost:9000/connect4/4"> 4 </a></button>
+                                        <button type="button" class="btn"> <a href="http://localhost:9000/connect4/5"> 5 </a></button>
+                                    </div>
+                                </div>
+
                             <tr>
                                 <td>@grid.grid(0)(0)</td>
                                 <td>@grid.grid(0)(1)</td>
@@ -74,6 +80,8 @@
                 </tr>
             </table>
         </div>
+    </div>
+    <div class="row">
         <div class="info">
             <div id="player">
                 <p>Its player @player turn!!</p>
@@ -84,5 +92,7 @@
                 <p>Or use the Links above the Grid to place the stone</p>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+
 }
