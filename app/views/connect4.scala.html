@@ -7,6 +7,13 @@
     <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/connect4.css")' />
     <div class="container">
         <div class="row">
+            <div class="info">
+            <div id="player">
+                <p>Its player @player turn!!</p>
+            </div>
+        </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <table cellspacing="20">
                     <tr>
@@ -81,17 +88,12 @@
                     </tr>
                 </table>
             </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="info">
-            <div id="player">
-                <p>Its player @player turn!!</p>
-            </div>
-            <div>
-                <p>Use URL to play the Game!!</p>
-                <p>Example: localhost:9000/connect4/0</p>
-                <p>Or use the Links above the Grid to place the stone</p>
+            <div class="col">
+                <div class="info">
+                    <p>Use URL to play the Game!!</p>
+                    <p>Example: localhost:9000/connect4/0</p>
+                    <p>Or use the Links above the Grid to place the stone</p>
+                </div>
             </div>
         </div>
     </div>

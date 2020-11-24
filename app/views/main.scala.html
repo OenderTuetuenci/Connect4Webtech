@@ -21,51 +21,39 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row">
-                <ul class="nav">
-                    <li class="nav-tabs">
-                        <a class="nav-link" href="http://localhost:9000/">Home</a>
-                    </li>
-                    <li class="nav-tabs">
-                        <a class="nav-link" href="http://localhost:9000/connect4">Game</a>
-                    </li>
-                    <li class="nav-tabs">
-                        <a class="nav-link" href="http://localhost:9000/test">Test</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+
         @* creates the tab bar attop of all pages *@
-        <nav class="navbar navbar-expand navbar-dark bg-dark" >
+        <nav class="navbar navbar-collapse collapse show navbar-dark bg-dark" >
             <a class="navbar-brand" href="http://localhost:9000/"> Connect4</a>
             @* creates the Connect4 name on the left side of tab bar *@
-            <button class="navbar-toggler">
+
+            <ul class="navbar-nav mr-auto">
+            <li class="navbar-toggler">
                 <a class="nav-link" href="http://localhost:9000/">Home</a>
-            </button>
-            <div id="TabOfC4" class="collapse navbar-collapse">
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:9000/">Home</a>
-                    <span class="sr-only">(current)</span>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:9000/">About</a>
-                    <span class="sr-only">(current)</span>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:9000/connect4">Game</a>
-                    <span class="sr-only">(current)</span>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost:9000/test">Test</a>
-                    <span class="sr-only">(current)</span>
-                </li>
-            </div>
+            </li>
+            <li class="navbar-toggler">
+                <a class="nav-link" href="http://localhost:9000/">About</a>
+                <span class="sr-only">(current)</span>
+            </li>
+            <li class="navbar-toggler">
+                <a class="nav-link" href="http://localhost:9000/connect4">Game</a>
+                <span class="sr-only">(current)</span>
+            </li>
+            <li class="navbar-toggler">
+                <a class="nav-link" href="http://localhost:9000/test">Test</a>
+                <span class="sr-only">(current)</span>
+            </li>
+            </ul>
         </nav>
 
-        @* And here's where we render the `Html` object containing
-         * the page content. *@
-        @content
+        <div class="container">
+            @* And here's where we render the `Html` object containing
+            * the page content. *@
+            @content
+        </div>
+
+
+
         <!-- links from bootstrapper quickstart page for JS and other  -->
    </body>
 </html>
