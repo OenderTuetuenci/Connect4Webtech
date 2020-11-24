@@ -14,10 +14,8 @@ tr{
     float: left;
     border: 3px solid white;
     padding: 1ex;
-    margin-left: 2ex;
 }
 .info {
-    float: right;
     margin-top: 10ex;
     margin-right: 5ex;
     font-size: 4ex;
