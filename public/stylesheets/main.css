@@ -34,9 +34,8 @@ body {
 }
 
 #start {
-    background-color: darkred;
     color: white;
-    font-size: 2ex;
+    font-size: 3ex;
     display: flex;
     flex-direction: column;
     align-items: center;
