@@ -23,27 +23,19 @@
     <body>
 
         @* creates the tab bar attop of all pages *@
-        <nav class="navbar navbar-collapse collapse show navbar-dark bg-dark" >
-            <a class="navbar-brand" href="http://localhost:9000/"> Connect4</a>
-            @* creates the Connect4 name on the left side of tab bar *@
-
-            <ul class="navbar-nav mr-auto">
-            <li class="navbar-toggler">
-                <a class="nav-link" href="http://localhost:9000/">Home</a>
-            </li>
-            <li class="navbar-toggler">
-                <a class="nav-link" href="http://localhost:9000/">About</a>
-                <span class="sr-only">(current)</span>
-            </li>
-            <li class="navbar-toggler">
-                <a class="nav-link" href="http://localhost:9000/connect4">Game</a>
-                <span class="sr-only">(current)</span>
-            </li>
-            <li class="navbar-toggler">
-                <a class="nav-link" href="http://localhost:9000/test">Test</a>
-                <span class="sr-only">(current)</span>
-            </li>
-            </ul>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand mr-3">Connect4</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav">
+                        <a href="http://localhost:9000" class="nav-item nav-link active">Home</a>
+                        <a href="http://localhost:9000/connect4" class="nav-item nav-link">Game</a>
+                    </div>
+                </div>
+            </div>
         </nav>
 
         <div class="container">
