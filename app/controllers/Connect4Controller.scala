@@ -23,7 +23,8 @@ class Connect4Controller @Inject() (cc:ControllerComponents) extends AbstractCon
   def about(): Action[AnyContent] = Action {
     Ok(views.html.index())
   }
-  def gridToJson: Action[AnyContent] = Action {
+  def gridToJson(column:Int): Action[AnyContent] = Action {
+    gameController.move(column)
     Ok(Json.toJson(grid))
   }
   implicit val gridWrites: Writes[GridInterface] = new Writes[GridInterface] {

@@ -49,19 +49,19 @@ for(let i = 0; i<widthlines.length;i++){
     ctx.lineTo(width,heightlines[i]);
     ctx.stroke();
 }
+function draw(button) {
+    $.ajax({
+        method: "GET",
+        url: "/json/"+button,
+        dataType: "json",
 
-$.ajax({
-    method: "GET",
-    url: "/json",
-    dataType: "json",
-
-    success: function (result) {
-        drawCircles(result)
-    }
-});
+        success: function (result) {
+            drawCircles(result)
+        }
+    });
+}
 function drawCircles(json){
     cells = json.grid.cells;
-    console.log(cells)
     for(let i = 0; i < cells.length;i++){
         let val = cells[i].val;
         let row = cells[i].row;
@@ -78,3 +78,4 @@ function drawCircles(json){
         }
     }
 }
+
