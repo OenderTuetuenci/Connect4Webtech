@@ -60,6 +60,19 @@ function draw(button) {
         }
     });
 }
+$(document).ready(function (){
+    console.log("Document is ready");
+    connectWebSocket();
+    $.ajax({
+        method: "GET",
+        url: "/json",
+        dataType: "json",
+
+        success: function (result) {
+            drawCircles(result)
+        }
+    });
+});
 function drawCircles(json){
     cells = json.grid.cells;
     for(let i = 0; i < cells.length;i++){
@@ -77,5 +90,25 @@ function drawCircles(json){
             ctx.fill();
         }
     }
+}
+function connectWebSocket(){
+    let websocket = new WebSocket("ws://localhost:9000/ws");
+    websocket.setTimeout
+
+    websocket.onopen = function (){
+        console.log("Connected to Websocket");
+    };
+    websocket.onclose = function(){
+        console.log("Connection with Websocket Closed");
+    };
+    websocket.onmessage = function (e){
+        if(typeof e.data === "string"){
+            let json = JSON.parse(e.data);
+            drawCircles(json);
+        }
+    };
+    websocket.onerror = function (error){
+        console.log("Error in Websocket Occured: " +error);
+    };
 }
 
