@@ -5,6 +5,13 @@
 
 @main("Welcome to Connect4!") {
     <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/connect4.css")' />
+    <script type = "text/javascript" src="@routes.Assets.versioned("javascripts/gridVue.js")" ></script>
+
+    <div id="app" class="row">
+        <h1>{{name}}</h1>
+        <input id="eingabe" v-model="name" v-on:keyup.enter="submit">
+    </div>
+
         <div class="row">
             <div class="col">
                 <div class="row">
@@ -36,4 +43,5 @@
             </div>
         </div>
     <script src='@routes.Assets.versioned("javascripts/grid.js")'></script>
+
 }
