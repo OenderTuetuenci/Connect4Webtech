@@ -57,7 +57,7 @@ class Connect4Controller @Inject() (cc:ControllerComponents)(implicit  system: A
 
     override def receive: Receive = {
       case msg: String =>
-        out ! Json.toJson(grid.toString)
+        out ! Json.toJson(grid)
         println("Sent Json to Client: "+msg)
     }
 
