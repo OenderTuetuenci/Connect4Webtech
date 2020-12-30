@@ -34,11 +34,15 @@ class Connect4Controller @Inject() (cc:ControllerComponents)(implicit  system: A
     Ok(views.html.index())
   }
   def gridToJson : Action[AnyContent] = Action {
-    Ok(Json.toJson(grid))
+    Ok(Json.toJson(grid)).withHeaders(
+      "Acces-Control-Allow-Origin"->"http://localhost:8080"
+    )
   }
   def gridToJsonWithMove(column:Int): Action[AnyContent] = Action {
     gameController.move(column)
-    Ok(Json.toJson(grid))
+    Ok(Json.toJson(grid)).withHeaders(
+      "Acces-Control-Allow-Origin"->"http://localhost:8080"
+    )
   }
   def socket: WebSocket = WebSocket.accept[String,String]{ request =>
     ActorFlow.actorRef {out =>

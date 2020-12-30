@@ -10,7 +10,7 @@ const cellheight = Math.floor(height/6);
 const stoneradius = Math.floor(cellheight/2.5);
 
 let widthlines = [0,0,0,0,0,0];
-let heightlines = [0,0,0,0,0];
+let heightlines = [0,0,0,0,05];
 let centerx = []
 let centery = []
 
@@ -32,7 +32,7 @@ for(let i = 0; i<widthlines.length;i++){
 }
 
 start = 0;
-for(let i = 0; i<widthlines.length;i++){
+for(let i = 0; i<heightlines.length;i++){
     heightlines[i]=start+cellheight;
     start+=cellheight;
 }
@@ -43,7 +43,7 @@ for(let i = 0; i<widthlines.length;i++){
     ctx.lineTo(widthlines[i],height);
     ctx.stroke();
 }
-for(let i = 0; i<widthlines.length;i++){
+for(let i = 0; i<heightlines.length;i++){
     ctx.beginPath();
     ctx.moveTo(0,heightlines[i]);
     ctx.lineTo(width,heightlines[i]);
